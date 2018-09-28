@@ -10,7 +10,6 @@ let app = express();
 app.use(bodyParser.json());
 
 app.post('/todos', (req, res) => {
-    console.log(req.body);
     let todo = new Todo({
         text: req.body.text,
         completed: req.body.completed
@@ -19,7 +18,7 @@ app.post('/todos', (req, res) => {
     todo.save().then((doc) => {
         res.send(doc);
     }, (e) => {
-       res.send('Failed to save.', e);
+        res.status(400).send(e);
     });
 });
 
