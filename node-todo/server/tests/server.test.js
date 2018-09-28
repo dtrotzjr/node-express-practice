@@ -4,6 +4,10 @@ const request = require('supertest');
 const {app} = require('./../server.js');
 const {Todo} = require('./../models/todo');
 
+beforeEach((done) => {
+    Todo.deleteMany({}).then(() => done());
+});
+
 describe('POST /todos', () => {
     it('should create a new todo', (done) => {
         const text = 'Test todo text';
