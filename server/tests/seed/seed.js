@@ -16,7 +16,7 @@ const users = [{
 }, {
     _id: userTwoID,
     email: 'someoneelse@gmail.com',
-    password: '$peci4lPASS#all'
+    password: '$peci4lPASS#two2'
 }];
 const todos = [{
     _id: new ObjectID(),
